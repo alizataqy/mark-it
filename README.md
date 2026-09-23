@@ -18,7 +18,7 @@ Ekstensi ini dibangun menggunakan **Manifest V3 murni (zero-dependency)** tanpa 
    - **Modal Konfirmasi Custom**: Dialog konfirmasi bertema gelap sebelum menghapus timestamp atau video.
 
 2. **Screen Time & Watch Time Tracker**:
-   - Pelacakan waktu aktif presisi: hanya menghitung saat video diputar (`play`) dan tab aktif (jeda / `pause` dan background tab tidak dihitung).
+   - Pelacakan waktu aktif presisi: menghitung selama video diputar (`play`) baik di tab aktif maupun tab latar belakang / background (waktu otomatis berhenti saat video di-`pause` atau selesai).
    - **Line Chart Interaktif**: Grafik garis SVG dengan area gradien dan hover tooltip detik/menit detail.
    - **Filter Fleksibel**: 24 Jam Terakhir, 7 Hari Terakhir, 30 Hari Terakhir, dan Semua Riwayat.
    - Opsi reset data statistik tontonan.

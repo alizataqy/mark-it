@@ -146,8 +146,8 @@
     if (trackerInterval) return;
     trackerInterval = setInterval(() => {
       const video = document.querySelector('video');
-      // Only count if video is present, not paused, not ended, and tab is visible
-      if (video && !video.paused && !video.ended && document.visibilityState === 'visible') {
+      // Count whenever video is playing (even in background tab); pause/ended stops counting
+      if (video && !video.paused && !video.ended) {
         accumulatedSeconds += 1;
         // Flush every 5 seconds to storage
         if (accumulatedSeconds >= 5) {
