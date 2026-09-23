@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mark It</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-title">
+        <svg class="header-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path fill="#ff0033" d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+        </svg>
+        <span class="app-name">Mark It</span>
+      </div>
+      <div class="tabs-nav" role="tablist" aria-label="Navigasi Menu">
+        <button id="tab-btn-bookmarks" class="tab-btn active" role="tab" aria-selected="true" aria-controls="bookmarks-view">Bookmarks</button>
+        <button id="tab-btn-stats" class="tab-btn" role="tab" aria-selected="false" aria-controls="stats-view">Waktu Tonton</button>
+      </div>
+    </header>
+
+    <!-- Tab 1: Bookmarks View -->
+    <main id="bookmarks-view" class="tab-content active" role="tabpanel" aria-labelledby="tab-btn-bookmarks">
+      <div class="action-bar">
+        <button id="btn-quick-bm" class="btn-primary" title="Tandai timestamp video yang sedang aktif">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+            <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+          </svg>
+          Tandai Waktu Sekarang <span class="shortcut-tag">Alt+B</span>
+        </button>
+      </div>
+
+      <div id="bookmarks-container" class="bookmarks-list">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div id="bookmarks-empty" class="empty-state" style="display: none;">
+        <svg viewBox="0 0 24 24" width="48" height="48" fill="#888" aria-hidden="true">
+          <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"/>
+        </svg>
+        <p>Belum ada bookmark tersimpan.</p>
+        <span class="sub-text">Buka video YouTube dan tekan <strong>Alt+B</strong> atau klik tombol bookmark di player.</span>
+      </div>
+    </main>
+
+    <!-- Tab 2: Screen Time Stats View -->
+    <main id="stats-view" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-stats">
+      <div class="stat-card">
+        <div class="stat-label">Waktu Tonton Hari Ini</div>
+        <div id="today-time" class="stat-value">0j 0m 0d</div>
+        <div class="stat-desc">Hanya dihitung saat video aktif diputar (play)</div>
+      </div>
+
+      <div class="chart-section">
+        <div class="filter-controls">
+          <button class="filter-btn active" data-range="24h">24 Jam</button>
+          <button class="filter-btn" data-range="7d">7 Hari</button>
+          <button class="filter-btn" data-range="30d">30 Hari</button>
+          <button class="filter-btn" data-range="all">Semua</button>
+        </div>
+
+        <div class="chart-header">
+          <span id="chart-range-title">Aktivitas 24 Jam Terakhir</span>
+          <span id="range-total" class="sub-text">Total: 0j 0m</span>
+        </div>
+
+        <div class="line-chart-container">
+          <svg id="line-chart-svg" class="line-chart-svg" viewBox="0 0 320 140">
+            <!-- Rendered dynamically -->
+          </svg>
+          <div id="chart-tooltip" class="chart-point-tooltip"></div>
+        </div>
+      </div>
+
+      <div class="stats-footer">
+        <button id="btn-reset-stats" class="btn-danger-outline">Reset Statistik</button>
+      </div>
+    </main>
+
+    <!-- Custom Confirmation Modal -->
+    <div id="confirm-modal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="#ff4d4f" class="modal-icon" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+          </svg>
+          <span id="modal-title" class="modal-title">Konfirmasi Hapus</span>
+        </div>
+        <p id="modal-message" class="modal-message">Apakah Anda yakin ingin menghapus item ini?</p>
+        <div class="modal-actions">
+          <button id="modal-btn-cancel" class="btn-secondary">Batal</button>
+          <button id="modal-btn-confirm" class="btn-danger">Hapus</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

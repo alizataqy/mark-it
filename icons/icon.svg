@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff0033"/>
+      <stop offset="100%" stop-color="#b30024"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <!-- Rounded Badge -->
+  <rect x="8" y="8" width="112" height="112" rx="26" fill="url(#bgGrad)" />
+
+  <!-- White Bookmark Ribbon with inner cutout -->
+  <g filter="url(#shadow)">
+    <path d="M 38 28 L 90 28 C 93.3 28 96 30.7 96 34 L 96 102 L 64 78 L 32 102 L 32 34 C 32 30.7 34.7 28 38 28 Z" fill="#ffffff" />
+    <!-- YouTube Play / Marker Accent inside Ribbon -->
+    <path d="M 56 46 L 76 58 L 56 70 Z" fill="#ff0033" />
+  </g>
+</svg>
