@@ -1,4 +1,4 @@
-# Mark It - YouTube Bookmark & Screen Time (Chrome Extension)
+# Mark It (Chrome Extension)
 
 Ekstensi Google Chrome (Manifest V3) tanpa dependensi eksternal untuk mencatat bookmark timestamp video YouTube, menandai langsung di timeline player, dan memantau screen time (waktu tonton aktif) dengan grafik interaktif.
 
@@ -23,22 +23,22 @@ Ekstensi Google Chrome (Manifest V3) tanpa dependensi eksternal untuk mencatat b
 
 ## Cara Install di Google Chrome
 
-1. Buka browser **Google Chrome**.
-2. Masuk ke halaman ekstensi dengan mengetik `chrome://extensions` di address bar.
-3. Aktifkan toggle **Developer mode** di pojok kanan atas.
-4. Klik tombol **Load unpacked** di pojok kiri atas.
-5. Pilih folder:
-   ```text
-   C:\dev\yt-bookmark-screentime
-   ```
-6. Ekstensi sudah aktif. Refresh tab YouTube yang terbuka untuk menggunakannya.
+1. Download atau clone repository proyek **Mark It** ke komputer Anda.
+2. Buka browser **Google Chrome** (atau browser berbasis Chromium seperti Brave, Edge, Opera).
+3. Masuk ke halaman pengelolaan ekstensi:
+   - Ketik `chrome://extensions` pada kolom URL / address bar lalu tekan Enter, atau
+   - Klik menu titik tiga di pojok kanan atas > **Extensions** > **Manage Extensions**.
+4. Aktifkan toggle **Developer mode** (Mode pengembang) di pojok kanan atas.
+5. Klik tombol **Load unpacked** (Muat yang belum dibongkar) di pojok kiri atas.
+6. Pilih folder root proyek **Mark It** tempat file `manifest.json` berada.
+7. Ekstensi **Mark It** siap digunakan. Buka atau muat ulang (refresh) tab YouTube untuk mulai menikmati fiturnya.
 
 ---
 
 ## Struktur File Project
 
 ```text
-yt-bookmark-screentime/
+mark-it/
 ├── background.js              # Service worker shortcut Alt+B
 ├── manifest.json              # Konfigurasi Chrome Extension Manifest V3
 ├── README.md                  # Dokumentasi proyek
