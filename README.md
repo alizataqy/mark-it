@@ -1,12 +1,16 @@
 # Mark It (Chrome Extension)
 
-Ekstensi Google Chrome (Manifest V3) tanpa dependensi eksternal untuk mencatat bookmark timestamp video YouTube, menandai langsung di timeline player, dan memantau screen time (waktu tonton aktif) dengan grafik interaktif.
+> **Mark It** adalah ekstensi Google Chrome yang dirancang untuk meningkatkan produktivitas saat menonton video edukasi, tutorial, atau riset di YouTube. Ekstensi ini menggabungkan dua fungsi esensial: **menandai momen penting (timestamp bookmark)** secara visual langsung di player YouTube dan **memantau kebiasaan waktu tonton aktif (screen time)** tanpa perlu instalasi aplikasi pihak ketiga yang berat.
+
+Ekstensi ini dibangun menggunakan **Manifest V3 murni (zero-dependency)** tanpa framework maupun library eksternal, sehingga berjalan sangat ringan, aman, dan menjaga privasi penuh karena seluruh data tersimpan secara lokal di browser Anda (`chrome.storage.local`).
+
+---
 
 ## Fitur Utama
 
 1. **Bookmark Timestamp**:
    - Tombol bookmark terintegrasi di kontrol player YouTube.
-   - Shortcut keyboard: **`Alt + B`** (atau `MacCtrl + B` di Mac).
+   - Shortcut keyboard instan: **`Alt + B`** (atau `MacCtrl + B` di Mac).
    - Tombol bookmark cepat langsung dari popup ekstensi.
    - **Timeline Marker**: Indikator penanda bookmark hitam langsung di progress bar YouTube yang dapat diklik untuk melompat ke timestamp.
    - **Kartu Video Akordeon**: Daftar video dapat dibuka dan ditutup (expand/collapse).
